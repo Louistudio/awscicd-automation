@@ -1,10 +1,10 @@
 pipeline{
-agent any
+    agent any
 
-stages{
-    stage('clone'){
-        step{
-            sh 'docker ps'
+    stages{
+        stage('Clone'){
+            steps{
+                sh 'docker ps'
         }
     }
 }
