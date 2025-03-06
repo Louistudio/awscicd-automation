@@ -9,6 +9,7 @@ pipeline{
         }
         stage('Docker-Build'){
             steps{
+                sh 'sudo -i'
                 sh 'apt upgrade'
             }
         }
