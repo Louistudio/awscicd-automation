@@ -9,7 +9,7 @@ pipeline{
         }
         stage('Docker-Build'){
             steps{
-                sh 'docker build -t web'
+                sh 'yum install docker'
             }
         }
     }
