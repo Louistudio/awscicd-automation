@@ -9,7 +9,7 @@ pipeline{
         }
         stage('Docker-Build'){
             steps{
-                sh 'apt add docker'
+                sh 'apt upgrade'
             }
         }
     }
