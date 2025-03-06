@@ -9,7 +9,7 @@ pipeline{
         }
         stage('Docker-Build'){
             steps{
-                sh 'yum install docker'
+                sh 'apt add docker'
             }
         }
     }
