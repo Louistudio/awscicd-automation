@@ -1,4 +1,4 @@
-pipeline
+pipeline{
 agent any
 
 stages{
@@ -7,4 +7,5 @@ stages{
             sh 'docker ps'
         }
     }
+}
 }
