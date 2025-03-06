@@ -9,8 +9,8 @@ pipeline{
         }
         stage('Docker-Build'){
             steps{
-                sh 'sudo -i'
-                sh 'apt upgrade'
+                sh 'apt-get update && apt-get install -y docker.io'
+                sh 'docker --version'
             }
         }
     }
