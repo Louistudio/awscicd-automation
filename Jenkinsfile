@@ -12,5 +12,10 @@ pipeline{
                 sh 'uname -r'
             }
         }
+        stage('codescan'){
+            steps{
+                sh 'apt install trivy'
+            }
+        }
     }
 }
