@@ -9,7 +9,7 @@ pipeline{
         }
         stage('Docker-Build'){
             steps{
-                sh 'docker --version'
+                sh 'uname -r'
             }
         }
     }
