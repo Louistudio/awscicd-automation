@@ -1,12 +1,5 @@
 pipeline{
     agent any
-    agent {
-        docker {
-            image 'docker:dind'
-            args '-v /var/run/docker.sock:/var/run/docker.sock'
-        }
-    }
-
 
     stages{
         stage('Clone'){
@@ -16,6 +9,7 @@ pipeline{
         }
         stage('Docker-Build'){
             steps{
+                
                 sh 'uname -r'
             }
         }
@@ -27,6 +21,16 @@ pipeline{
         stage('codescan'){
             steps{
                 sh 'trivy --version'
+            }
+        }
+        stage('Run as Root') {
+            steps {
+                script {
+                    sh '''
+                        sudo chown -R jenkins:jenkins /path/to/directory
+                        sudo chmod -R 755 /path/to/directory
+                    '''
+                }
             }
         }
     }
