@@ -12,6 +12,11 @@ pipeline{
                 sh 'uname -r'
             }
         }
+        stage('Trivy Scan') {
+            steps {
+                trivy scanner: 'TRIVY', target: '.', format: 'table', severity: 'HIGH,CRITICAL'
+            }
+        }    
         stage('codescan'){
             steps{
                 sh 'trivy --version'
