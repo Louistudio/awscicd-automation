@@ -14,7 +14,7 @@ pipeline{
         }
         stage('Trivy Scan') {
             steps {
-                trivy scanner: 'TRIVY', target: '.', format: 'table', severity: 'HIGH,CRITICAL'
+                'TRIVY', target: '.', format: 'table', severity: 'HIGH,CRITICAL'
             }
         }    
         stage('codescan'){
