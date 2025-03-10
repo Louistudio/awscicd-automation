@@ -14,7 +14,7 @@ pipeline{
         }
         stage('codescan'){
             steps{
-                sh 'apt install trivy'
+                sh 'trivy --version'
             }
         }
     }
